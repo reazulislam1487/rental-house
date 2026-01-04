@@ -1,4 +1,4 @@
-Project Name: Vehicle Rental
+Project Name: Rental House
 Live URL: https://rental-house-ten.vercel.app
 
 ## The Vehicle Rental System is a backend API designed to manage a vehicle rental service efficiently. It handles:
@@ -22,8 +22,8 @@ Live URL: https://rental-house-ten.vercel.app
 
 1. Clone Repository
 
-git clone <your-repo-url>
-cd vehicle-rental-system
+git clone https://github.com/reazulislam1487/rental-house
+cd rental-house
 
 2. Install Dependencies
 
@@ -33,7 +33,7 @@ npm install
 
 Create .env file:
 
-PORT=5000
+PORT=8080
 DATABASE_URL=postgres://username:password@localhost:5432/vehicle_rental
 JWT_SECRET=your_jwt_secret
 
@@ -47,7 +47,7 @@ npx prisma migrate dev --name init
 
 npm run dev
 
-Server runs at http://localhost:5000
+Server runs at http://localhost:8080
 
 6. Testing API
 
