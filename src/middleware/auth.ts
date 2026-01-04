@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { secret } from "../modules/auth/auth.service";
+import { secret } from "../modules/auth/auth.service.js";
 
 const auth =
   (...roles: string[]) =>

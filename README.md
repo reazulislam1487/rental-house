@@ -1,12 +1,13 @@
 Project Name: Vehicle Rental
-Live URL: https://vehicle-rental-a2.vercel.app
+Live URL: https://rental-house-ten.vercel.app
 
 ## The Vehicle Rental System is a backend API designed to manage a vehicle rental service efficiently. It handles:
-   1. Vehicles: Manage vehicle inventory and track availability.
-   2. Customers: Manage customer accounts and profiles.
-   3. Bookings: Handle vehicle rentals, returns, and automated cost calculation.
-   4. Authentication & Authorization: Secure role-based access for Admin and    Customer users.
-   5. The API ensures smooth operations for both customers and administrators while enforcing proper access control.
+
+1.  Vehicles: Manage vehicle inventory and track availability.
+2.  Customers: Manage customer accounts and profiles.
+3.  Bookings: Handle vehicle rentals, returns, and automated cost calculation.
+4.  Authentication & Authorization: Secure role-based access for Admin and Customer users.
+5.  The API ensures smooth operations for both customers and administrators while enforcing proper access control.
 
 ## Technology Stack
 
@@ -17,7 +18,6 @@ Live URL: https://vehicle-rental-a2.vercel.app
 . bcrypt for password hashing
 . jsonwebtoken (JWT) for secure token-based authentication
 
-
 ## Setup & Usage Instructions
 
 1. Clone Repository
@@ -25,11 +25,9 @@ Live URL: https://vehicle-rental-a2.vercel.app
 git clone <your-repo-url>
 cd vehicle-rental-system
 
-
 2. Install Dependencies
 
 npm install
-
 
 3. Configure Environment
 
@@ -39,18 +37,15 @@ PORT=5000
 DATABASE_URL=postgres://username:password@localhost:5432/vehicle_rental
 JWT_SECRET=your_jwt_secret
 
-
 4. Run Database Migrations
 
 npx prisma migrate dev --name init
-
 
 (or use your preferred SQL migration method)
 
 5. Start Development Server
 
 npm run dev
-
 
 Server runs at http://localhost:5000
 

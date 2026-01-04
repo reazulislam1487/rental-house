@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { pool } from "../../database/db";
+import { pool } from "../../database/db.js";
 
 const createUserIntoDB = async (payload: any) => {
   let { name, email, password, role, phone } = payload;

@@ -1,12 +1,11 @@
 import bcrypt from "bcryptjs";
-import { pool } from "../../database/db";
+import { pool } from "../../database/db.js";
 import jwt from "jsonwebtoken";
 
-export const secret = process.env.JWT_SECRET || "default-secret-key";
+export const secret = process.env.JWT_SECRET || "tacfcfcxzdra";
 
 const signupUserIntoDB = async (payload: any) => {
   const { name, email, password, phone, role } = payload;
-
 
   if (!name || !email || !password || !phone || !role) {
     throw new Error("All fields are required!");
@@ -16,21 +15,17 @@ const signupUserIntoDB = async (payload: any) => {
     throw new Error("Invalid role! Use 'admin' or 'customer'.");
   }
 
-
   const lowerEmail = email.toLowerCase();
 
-  const exists = await pool.query(
-    `SELECT id FROM users WHERE email=$1`,
-    [lowerEmail]
-  );
+  const exists = await pool.query(`SELECT id FROM users WHERE email=$1`, [
+    lowerEmail,
+  ]);
 
   if (exists.rows.length > 0) {
     throw new Error("Email already exists!");
   }
 
-
   const hashedPassword = await bcrypt.hash(password, 12);
-
 
   const result = await pool.query(
     `
@@ -48,10 +43,9 @@ const loginUserIntoDB = async (email: string, password: string) => {
   const lowerEmail = email.toLowerCase();
 
   // Find user
-  const user = await pool.query(
-    `SELECT * FROM users WHERE email=$1`,
-    [lowerEmail]
-  );
+  const user = await pool.query(`SELECT * FROM users WHERE email=$1`, [
+    lowerEmail,
+  ]);
 
   if (user.rows.length === 0) {
     throw new Error("User not found!");
